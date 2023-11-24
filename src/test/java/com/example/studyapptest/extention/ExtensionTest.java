@@ -1,7 +1,7 @@
-package com.example.studyapptest;
+package com.example.studyapptest.extention;
 
+import com.example.studyapptest.annotations.SlowTest;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 //@ExtendWith(FindSlowTestExtension.class)

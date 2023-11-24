@@ -1,6 +1,8 @@
 package com.example.studyapptest;
 
 
+import com.example.studyapptest.annotations.FastTest;
+import com.example.studyapptest.annotations.SlowTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;

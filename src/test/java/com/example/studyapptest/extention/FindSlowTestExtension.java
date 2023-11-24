@@ -1,13 +1,11 @@
-package com.example.studyapptest;
+package com.example.studyapptest.extention;
 
 import java.lang.reflect.Method;
-import java.time.Duration;
 
+import com.example.studyapptest.annotations.SlowTest;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.springframework.test.context.event.annotation.AfterTestExecution;
-import org.springframework.test.context.event.annotation.BeforeTestExecution;
 
 public class FindSlowTestExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback
 {

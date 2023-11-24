@@ -1,12 +1,13 @@
-package com.example.studyapptest;
+package com.example.studyapptest.domain;
 
+import com.example.studyapptest.StudyStatus;
 
 public class Study {
     public static final String LIMIT_MESSAGE = "limit은 0보다 커야한다.";
     private StudyStatus status = StudyStatus.DRAFT;
     private long limit;
     private String name;
-
+    private Member owner;
     public Study( long limit, String name)
     {
         this.limit = limit;
@@ -43,5 +44,15 @@ public class Study {
     public StudyStatus getStatus()
     {
         return status;
+    }
+
+    public Member getOwner()
+    {
+        return owner;
+    }
+
+    public void setOwner(Member owner)
+    {
+        this.owner = owner;
     }
 }
