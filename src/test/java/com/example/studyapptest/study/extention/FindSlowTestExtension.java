@@ -1,8 +1,8 @@
-package com.example.studyapptest.extention;
+package com.example.studyapptest.study.extention;
 
 import java.lang.reflect.Method;
 
-import com.example.studyapptest.annotations.SlowTest;
+import com.example.studyapptest.study.annotations.SlowTest;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;

@@ -1,18 +1,25 @@
 package com.example.studyapptest.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Member
 {
-    private long Id;
+    @Id
+    @GeneratedValue
+    private long id;
     private String email;
 
     public long getId()
     {
-        return Id;
+        return id;
     }
 
     public void setId(long id)
     {
-        Id = id;
+        id = id;
     }
 
     public String getEmail()

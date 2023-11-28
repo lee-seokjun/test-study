@@ -1,6 +1,6 @@
-package com.example.studyapptest.extention;
+package com.example.studyapptest.study.extention;
 
-import com.example.studyapptest.annotations.SlowTest;
+import com.example.studyapptest.study.annotations.SlowTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 

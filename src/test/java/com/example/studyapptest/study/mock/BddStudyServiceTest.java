@@ -1,10 +1,13 @@
-package com.example.studyapptest.mock;
+package com.example.studyapptest.study.mock;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
+import com.example.studyapptest.member.MemberService;
+import com.example.studyapptest.study.StudyRepository;
+import com.example.studyapptest.study.StudyService2;
 import java.util.Optional;
 
 import com.example.studyapptest.domain.Member;
@@ -42,7 +45,7 @@ class BddStudyServiceTest
         studyService.createNewStudy(1L, study);
 
         // Then
-        Assertions.assertEquals(member, study.getOwner());
+        Assertions.assertEquals(member, study.getOwnerId());
 
 //        InOrder inOrder = Mockito.inOrder(memberService);
 //        inOrder.verify(memberService).notify(study);

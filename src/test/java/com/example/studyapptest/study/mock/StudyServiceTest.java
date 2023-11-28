@@ -1,4 +1,4 @@
-package com.example.studyapptest.mock;
+package com.example.studyapptest.study.mock;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,6 +12,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
+import com.example.studyapptest.member.MemberService;
+import com.example.studyapptest.study.StudyRepository;
+import com.example.studyapptest.study.StudyService;
+import com.example.studyapptest.study.StudyService2;
 import java.util.Optional;
 
 import com.example.studyapptest.domain.Member;

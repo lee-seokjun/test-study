@@ -1,5 +1,6 @@
-package com.example.studyapptest.mock;
+package com.example.studyapptest.study;
 
+import com.example.studyapptest.member.MemberService;
 import java.util.Optional;
 
 import com.example.studyapptest.domain.Study;
@@ -20,7 +21,10 @@ public class StudyService
 
     public Study createNewStudy (Long memberId, Study study) {
         Optional<Member> member = memberService.findById(memberId);
-        study.setOwner(member.orElseThrow(() -> new IllegalArgumentException(" member id does not exists")));
+        study.setOwner(member
+            .orElseThrow(() -> new IllegalArgumentException(" member id does not exists"))
+            .getId()
+        );
         return repository.save(study);
     }
 }

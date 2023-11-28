@@ -1,15 +1,17 @@
-package com.example.studyapptest;
+package com.example.studyapptest.study;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
+import com.example.studyapptest.StudyStatus;
 import java.time.Duration;
 import java.util.function.Supplier;
 
 import com.example.studyapptest.domain.Study;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -36,7 +38,7 @@ class StudyTest
     void test_all() {
         Study study = new Study(-10);
         assertAll(
-            () ->         assertEquals(StudyStatus.DRAFT, study.getStatus(),
+            () ->         Assertions.assertEquals(StudyStatus.DRAFT, study.getStatus(),
                 "스터디 생성시 상태값이 DRAFT 이어야 한다."),
             () -> assertNotNull(study),
             () -> assertEquals(StudyStatus.DRAFT, study.getStatus(),

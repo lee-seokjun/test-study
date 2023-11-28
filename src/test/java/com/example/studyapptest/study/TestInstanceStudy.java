@@ -1,4 +1,4 @@
-package com.example.studyapptest;
+package com.example.studyapptest.study;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

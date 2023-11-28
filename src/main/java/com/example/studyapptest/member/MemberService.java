@@ -1,4 +1,4 @@
-package com.example.studyapptest.mock;
+package com.example.studyapptest.member;
 
 import java.util.Optional;
 
