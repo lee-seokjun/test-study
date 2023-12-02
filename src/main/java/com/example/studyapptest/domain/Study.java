@@ -59,7 +59,7 @@ public class Study {
         return ownerId;
     }
 
-    public void setOwner(Long owner)
+    public void setOwner(Long ownerId)
     {
         this.ownerId = ownerId;
     }

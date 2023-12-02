@@ -45,7 +45,7 @@ class BddStudyServiceTest
         studyService.createNewStudy(1L, study);
 
         // Then
-        Assertions.assertEquals(member, study.getOwnerId());
+        Assertions.assertEquals(member.getId(), study.getOwnerId());
 
 //        InOrder inOrder = Mockito.inOrder(memberService);
 //        inOrder.verify(memberService).notify(study);
