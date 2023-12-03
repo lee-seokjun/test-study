@@ -1,18 +1,20 @@
 package com.example.studyapptest.domain;
 
 import com.example.studyapptest.StudyStatus;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.springframework.boot.autoconfigure.quartz.QuartzTransactionManager;
 
 @Entity
 public class Study {
     @Id
-    @GeneratedValue
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     public static final String LIMIT_MESSAGE = "limit은 0보다 커야한다.";
     private StudyStatus status = StudyStatus.DRAFT;
+    @Column(name = "c_limit")
     private long limit;
     private String name;
     private Long ownerId;
@@ -62,5 +64,9 @@ public class Study {
     public void setOwner(Long ownerId)
     {
         this.ownerId = ownerId;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

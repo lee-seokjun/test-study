@@ -55,11 +55,16 @@
             <version>1.15.1</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>test</scope>
+            <version>42.3.8</version>
         </dependency>
     </dependencies>
 
@@ -86,7 +91,6 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration><groups>fast</groups></configuration>
                     </plugin>
                 </plugins>
             </build>
