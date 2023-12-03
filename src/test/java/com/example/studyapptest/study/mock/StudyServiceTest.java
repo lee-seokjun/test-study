@@ -1,9 +1,8 @@
 package com.example.studyapptest.study.mock;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumingThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
@@ -34,7 +33,6 @@ class StudyServiceTest
     @Test
     void createStudyService(@Mock MemberService memberService, @Mock StudyRepository studyRepository){
 
-        StudyService studyService = new StudyService(memberService, studyRepository);
         Member member = new Member();
         member.setId(1L);
         member.setEmail("iope100@naver.com");
@@ -42,12 +40,8 @@ class StudyServiceTest
 
         Optional<Member> getMember = memberService.findById(1L);
         assertEquals("iope100@naver.com",getMember.get().getEmail());
-
-        doThrow(new IllegalArgumentException()).when(memberService.findById(1L).isPresent());
-        Study study = new Study(10, "java");
-
-        studyService.createNewStudy(1L, study);
-        studyService.createNewStudy(2L, study);
+        doThrow(new IllegalArgumentException()).when(memberService).validate(1L);
+        assertThrows(IllegalArgumentException.class, () ->  memberService.validate(1L));
 
     }
     @Test
@@ -87,7 +81,7 @@ class StudyServiceTest
 
         InOrder inOrder = Mockito.inOrder(memberService);
         inOrder.verify(memberService).notify(study);
-//        inOrder.verify(memberService).notify(member);
+        inOrder.verify(memberService).notify(member);
         verifyNoMoreInteractions(memberService); // 어떤 액션 이후 호출이 없어야 한다.
 
     }

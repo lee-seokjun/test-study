@@ -15,12 +15,15 @@ public class StudyService2 extends StudyService
     }
 
     public Study createNewStudy (Long memberId, Study study) {
-        Optional<Member> member = super.memberService.findById(memberId);
+        Optional<Member> member = memberService.findById(memberId);
         study.setOwner(member.orElseThrow(() -> new IllegalArgumentException(" member id does not exists"))
             .getId());
         repository.save(study);
         memberService.notify(study);
         memberService.notify(member.get());
         return study;
+    }
+    public Optional<Study> findById (Long id) {
+        return repository.findById(id);
     }
 }

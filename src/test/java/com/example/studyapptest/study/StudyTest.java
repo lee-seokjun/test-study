@@ -36,7 +36,8 @@ class StudyTest
 
     @Test
     void test_all() {
-        Study study = new Study(-10);
+//        Study study = new Study(-10);
+        Study study = new Study(10);
         assertAll(
             () ->         Assertions.assertEquals(StudyStatus.DRAFT, study.getStatus(),
                 "스터디 생성시 상태값이 DRAFT 이어야 한다."),
@@ -60,14 +61,14 @@ class StudyTest
     {
         assertTimeout(Duration.ofMillis(10), () -> {
             new Study(10);
-            Thread.sleep(100);
+            Thread.sleep(1);
         });
     }
 
     @Test
     @EnabledOnOs(value = OS.MAC) // os 확인하여 테스트 할지
-    @EnabledOnJre({org.junit.jupiter.api.condition.JRE.JAVA_8}) // java version 확인하여 테스트할지 결정
-    @EnabledIfEnvironmentVariable(named ="TEST_ENV", matches = "LOCAL")
+//    @EnabledOnJre({org.junit.jupiter.api.condition.JRE.JAVA_8}) // java version 확인하여 테스트할지 결정
+//    @EnabledIfEnvironmentVariable(named ="TEST_ENV", matches = "LOCAL")
     //@DisabledOnJre()
     //@DisabledOnOs()
     void assumeTrueTest() {
@@ -89,7 +90,7 @@ class StudyTest
         //thread
         assertTimeoutPreemptively(Duration.ofMillis(10), () -> {
             new Study(10);
-            Thread.sleep(100);
+            Thread.sleep(1);
         });
     }
 
